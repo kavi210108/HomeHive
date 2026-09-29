@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  color: #2563eb;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* Buttons */
+
+button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Main Section */
+
+main {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+main h1 {
+  font-size: 42px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+main p {
+  color: #64748b;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Search */
+
+input {
+  width: 320px;
+  max-width: 100%;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+/* Services */
+
+main h2 {
+  margin-top: 65px;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+ main > div {
+  display: block;
+}
+
+main > .service-grid {
+  display: grid;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    padding: 55px 15px;
+  }
+
+  main h1 {
+    font-size: 32px;
+  }
+
+  input {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* Service Cards */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.service-card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.service-card button {
+  width: 100%;
+}
+
+/* How It Works Section */
+
+.how-it-works {
+  background-color: #eff6ff;
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 32px;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+.step-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works {
+    padding: 50px 20px;
+  }
+}
+
+/* Booking Form */
+
+.booking-section {
+  width: 90%;
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.10);
+  text-align: left;
+}
+
+.booking-section h2 {
+  color: #1d4ed8;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.booking-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.booking-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-section label {
+  font-weight: 600;
+  text-align: left;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.booking-section textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.booking-section button {
+  margin-top: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+.booking-section {
+  scroll-margin-top: 30px;
+}
+/* About Section */
+
+#about {
+  background-color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+#about h2 {
+  color: #2563eb;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Contact Section */
+
+#contact {
+  background-color: #eff6ff;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #1d4ed8;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#contact > p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+#contact > div {
+  display: inline-block;
+  vertical-align: top;
+  width: 280px;
+  min-height: 150px;
+  background: white;
+  padding: 25px;
+  margin: 12px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(37, 99, 235, 0.08);
+  transition: 0.3s ease;
+}
+
+#contact > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+#contact h3 {
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+#contact > div p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* Login Popup */
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: loginPop 0.3s ease;
+}
+
+.login-box h2 {
+  color: #1d4ed8;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.login-box > p {
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-box label {
+  text-align: left;
+  font-weight: 600;
+  color: #334155;
+}
+
+.login-box input {
+  width: 100%;
+  margin: 0;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.login-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login-box button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+@keyframes loginPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px 20px;
+  }
+}
