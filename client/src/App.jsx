@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './App.css';
+import { apiCall } from './api';
 function App() {
   const [showBooking, setShowBooking] = useState(false);
   const [selectedService, setSelectedService] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
   const [showLogin, setShowLogin] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const services = [
@@ -144,16 +147,27 @@ const filteredServices = services.filter((service) =>
       <h2>Welcome to HomeHive</h2>
       <p>Login to continue</p>
 
-      <form onSubmit={(e) => {
+      <form onSubmit={async (e) => {
         e.preventDefault();
-        alert("Login submitted successfully!");
-        setShowLogin(false);
+        try {
+          const data = await apiCall('/auth/login', 'POST', {
+            email: loginEmail,
+            password: loginPassword,
+          });
+          localStorage.setItem('token', data.token);
+          alert('Login success: ' + data.user.role);
+          setShowLogin(false);
+        } catch (err) {
+          alert(err.message);
+        }
       }}>
 
         <label>Email Address</label>
         <input
           type="email"
           placeholder="Enter your email"
+          value={loginEmail}
+          onChange={(e) => setLoginEmail(e.target.value)}
           required
         />
 
@@ -161,15 +175,14 @@ const filteredServices = services.filter((service) =>
         <input
           type="password"
           placeholder="Enter your password"
+          value={loginPassword}
+          onChange={(e) => setLoginPassword(e.target.value)}
           required
         />
 
         <button type="submit">Login</button>
 
-        <button
-          type="button"
-          onClick={() => setShowLogin(false)}
-        >
+        <button type="button" onClick={() => setShowLogin(false)}>
           Close
         </button>
 
