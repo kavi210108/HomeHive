@@ -1,5 +1,5 @@
 const Availability = require("../models/availability");
-const ProviderProfile = require("../models/providerProfile");
+const ProviderProfile = require("../models/ProviderProfile");
 
 exports.createAvailability = async (req, res) => {
   try {

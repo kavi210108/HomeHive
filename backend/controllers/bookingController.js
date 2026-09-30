@@ -1,5 +1,5 @@
 const Booking = require("../models/booking");
-const ProviderProfile = require("../models/providerProfile");
+const ProviderProfile = require("../models/ProviderProfile");
 const Service = require("../models/service");
 
 exports.createBooking = async (req, res) => {

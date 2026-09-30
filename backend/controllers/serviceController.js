@@ -1,5 +1,5 @@
 const Service = require("../models/service");
-const ProviderProfile = require("../models/providerProfile");
+const ProviderProfile = require("../models/ProviderProfile");
 
 exports.createService = async (req, res) => {
   try {
