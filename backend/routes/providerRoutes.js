@@ -1,17 +1,22 @@
 const express = require("express");
-const { protect, allowRoles } = require("../middleware/authMiddleware");
-const {
-  saveMyProfile,
-  getMyProfile,
-  searchProviders,
-  getProviderById,
-} = require("../controllers/providerController");
 
 const router = express.Router();
 
-router.get("/", searchProviders);
-router.get("/me", protect, allowRoles("provider"), getMyProfile);
-router.post("/me", protect, allowRoles("provider"), saveMyProfile);
+const {
+  createProfile,
+  getMyProfile,
+  updateMyProfile,
+  getProviderById,
+} = require("../controllers/providerController");
+
+const { protect, allowRoles } = require("../middleware/authMiddleware");
+
+router.post("/profile", protect, allowRoles("provider"), createProfile);
+
+router.get("/profile", protect, allowRoles("provider"), getMyProfile);
+
+router.put("/profile", protect, allowRoles("provider"), updateMyProfile);
+
 router.get("/:id", getProviderById);
 
 module.exports = router;

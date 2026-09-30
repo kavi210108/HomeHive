@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 
-const providerProfileSchema = new mongoose.Schema(
+const serviceSchema = new mongoose.Schema(
   {
-    user: {
+    provider: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "ProviderProfile",
       required: true,
-      unique: true,
     },
 
-    businessName: {
+    name: {
       type: String,
       required: true,
       trim: true,
@@ -20,19 +19,16 @@ const providerProfileSchema = new mongoose.Schema(
       trim: true,
     },
 
-    phone: {
-      type: String,
-      trim: true,
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
     },
 
-    address: {
-      type: String,
-      trim: true,
-    },
-
-    city: {
-      type: String,
-      trim: true,
+    duration: {
+      type: Number,
+      required: true,
+      min: 1,
     },
 
     status: {
@@ -46,4 +42,4 @@ const providerProfileSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("ProviderProfile", providerProfileSchema);
+module.exports = mongoose.model("Service", serviceSchema);
