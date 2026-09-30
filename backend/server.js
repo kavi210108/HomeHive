@@ -14,7 +14,8 @@ app.get("/", (req, res) => res.send("HomeHive API running"));
 
 // Auth routes
 app.use("/api/auth", require("./routes/authRoutes"));
-
+app.use("/api/providers", require("./routes/providerRoutes"));
+app.use("/api/admin", require("./routes/adminRoutes"));
 // Review routes
 app.use("/api/reviews", require("./routes/reviewRoutes"));
 
